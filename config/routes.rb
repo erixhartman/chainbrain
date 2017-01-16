@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :locations
-  resources :ratings
+  resources :reviews
   resources :companies
   resources :users
 end
