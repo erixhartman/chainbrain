@@ -4,7 +4,13 @@ class Location < ApplicationRecord
   has_many :reviews
 
   def location_rating
-    Rating.where(location_id: self.id).average("rating")
+    location_ratings = []
+    self.reviews.each do |x|
+       location_ratings << x.rating
+    end
+    return location_ratings.inject{ |sum, el| sum + el }.to_f / location_ratings.size
   end
+
+
 
 end
