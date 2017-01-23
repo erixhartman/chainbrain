@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:show, :new, :create]
   resources :companies, only: [:index, :show, :new, :create]
   resources :users, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :create, :destroy]
 end
