@@ -1,2 +1,2 @@
-module RatingsHelper
+module ReviewsHelper
 end
