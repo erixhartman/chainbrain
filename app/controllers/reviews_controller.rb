@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :load_location
+
   def new
     @review = Review.new
-    @location = Location.find(params[:location_id])
+    # @location = Location.find(params[:location_id])
   end
 
   def create
@@ -10,6 +12,8 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to location_path(@location.id)
+    else
+      render :new
     end
   end
 
