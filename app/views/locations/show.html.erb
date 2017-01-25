@@ -8,3 +8,10 @@
   <p>Review by: <%= r.user.username %></p>
   <p>Score: <%= r.rating %></p> <br>
 <% end %>
+
+
+<% if current_user %>
+  <%= link_to "Write a review!", new_review_path %>
+<% else %>
+  <%= link_to "Log in to leave a review!", new_session_path %>
+<% end %>
