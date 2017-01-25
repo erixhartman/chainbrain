@@ -13,7 +13,7 @@
   <% end %>
       <p>
       <%= f.label :rating, "Please rate this location on a scale of 1-5" %><br>
-      <%= f.number_field :rating %>
+      <%= f.number_field(:rating, in: 1..5) %>
       </p>
 
     <p><%= f.submit 'Submit', :class => "submit-button" %></p>
