@@ -1,0 +1,5 @@
+<h1>CHAINBRAIN</h1>
+
+<% @companies.each do |c| %>
+  <%= link_to c.name, company_path(c.id) %>
+<% end %>
