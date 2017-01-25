@@ -1,4 +1,10 @@
-<h2>Location Show Page</h2>
+<h2><%= @location.company.name %></h2>
 
+<h3><%= @location.address %></h3>
 <h4>Number of Reviews: <%= @location.reviews.count %></h4>
-<h4>Rating: <%= @location.location_rating %></h4>
+<h4>Rating: <%= @location.location_rating %></h4> <br>
+
+<% @location.reviews.each do |r| %>
+  <p>Review by: <%= r.user.username %></p>
+  <p>Score: <%= r.rating %></p> <br>
+<% end %>
