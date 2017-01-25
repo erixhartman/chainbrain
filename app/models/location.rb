@@ -4,11 +4,15 @@ class Location < ApplicationRecord
   has_many :reviews
 
   def location_rating
-    all_ratings = []
-    self.reviews.each do |x|
-       all_ratings << x.rating
-    end
-     return all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size
+    if self.reviews.count == 0
+      return "N/A"
+    else
+      all_ratings = []
+      self.reviews.each do |x|
+         all_ratings << x.rating
+      end
+       return all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size
+   end
   end
 
 
