@@ -11,7 +11,7 @@
 
 
 <% if current_user %>
-  <%= link_to "Write a review!", new_review_path %>
+  <%= link_to "Write a review!", new_location_review_path(@location) %>
 <% else %>
   <%= link_to "Log in to leave a review!", new_session_path %>
 <% end %>
