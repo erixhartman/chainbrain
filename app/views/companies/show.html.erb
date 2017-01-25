@@ -1,6 +1,6 @@
 <h1><%= @company.name %></h1>
 
 <% @company.locations.each do |t| %>
-  <%= t.address %><br>
+  <%= link_to t.address, location_path(t.id) %><br>
   <%= t.location_rating %><br><br>
 <% end %>
