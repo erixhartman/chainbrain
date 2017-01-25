@@ -5,9 +5,6 @@ class LocationsController < ApplicationController
 
   def show
     @location  = Location.find(params[:id])
-    if current_user
-      @rating = @location.reviews.build
-    end
   end
 
   def create
