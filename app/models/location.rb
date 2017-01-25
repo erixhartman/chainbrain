@@ -11,7 +11,7 @@ class Location < ApplicationRecord
       self.reviews.each do |x|
          all_ratings << x.rating
       end
-       return all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size
+       return (all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size).round(2)
    end
   end
 
