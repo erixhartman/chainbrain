@@ -1,1 +1,5 @@
-<h1> Hello <%= current_user.username %></h1>
+<% if current_user %>
+  <h1> Hello <%= current_user.username %></h1>
+<% else %>
+  <h1><%= link_to "Log in to view your profile!", new_session_path %></h1>
+<% end %>
