@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if current_user
+    end
   end
 
   def edit
